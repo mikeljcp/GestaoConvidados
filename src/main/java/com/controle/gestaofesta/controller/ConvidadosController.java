@@ -25,14 +25,7 @@ public class ConvidadosController {
 		modelAndView.addObject(new Convidado());
 		return modelAndView;
 	}
-	
-	/*@PostMapping("/convidados")
-	public ModelAndView adicionar() {
-		ModelAndView modelAndView = new ModelAndView("ListaConvidados");
-		
-		modelAndView.addObject(new Convidado());
-		return modelAndView;
-	}*/
+
 	
 	@PostMapping
 	public String salvar(Convidado convidado) {
