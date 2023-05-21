@@ -22,6 +22,7 @@ public class ConvidadosController {
 		ModelAndView modelAndView = new ModelAndView("ListaConvidados");
 		
 		modelAndView.addObject("convidados", convidados.findAll());
+		modelAndView.addObject(new Convidado());
 		return modelAndView;
 	}
 	
