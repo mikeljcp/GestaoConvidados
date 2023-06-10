@@ -5,15 +5,13 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-
 @Entity
 public class Convidado {
-	
-	
 	/*
 	 * Chave primaria em BD e forma de pesquisar valor maximo para proxima inserção
 	 * */
 	@Id
+
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	
