@@ -20,8 +20,10 @@
 		<div class="panel-heading"></div>
 		<h1 class="panel-title">Lista de Convidados</h1>
 
+		<!-- Formulário para acrescentar convidados através do método POST-->
 		<form class="form-inline" method="POST" th:object="${convidado}"
 			th:action="@{/convidados}" style="margin: 20px 0">
+			<!-- Campos Nome e Acompanhantes com suas variaveis locais para salva em BD -->
 			<div class="form-grup">
 				<input type="text" class="form-control" placeholder="Nome"
 					th:field="*{nome}" /> 
@@ -42,6 +44,8 @@
 				</tr>
 			</thead>
 			<tbody>
+			
+				<!-- Itera na variavel local convidados e utiliza a chamada dos metodos nome e quantidadeAcompanhantes -->
 				<tr th:each="convidado : ${convidados}">
 					<td th:text="${convidado.nome}"></td>
 					<td th:text="${convidado.quantidadeAcompanhantes}"></td>
