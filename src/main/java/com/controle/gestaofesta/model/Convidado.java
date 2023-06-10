@@ -6,13 +6,20 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
+import org.hibernate.annotations.GenericGenerator;
+
 @Entity
 public class Convidado implements Serializable{
 	
 	private static final long serialVersionUID = 1L;
 	
+	
+	/*
+	 * Chave primaria em BD e forma de pesquisar valor maximo para proxima inserção
+	 * */
 	@Id
-	@GeneratedValue
+	@GeneratedValue(generator = "increment")
+	@GenericGenerator(name = "increment", strategy = "increment")
 	private Long id;
 	
 
