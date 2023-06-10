@@ -8,12 +8,10 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 
 
-//Torna a classe uma que pode abranger quaisquer outras do SPRING
 @Configuration
 public class InMemorySecurityConfig {
 	
 	
-	//Injection automatica para autentificação
 	@Autowired
 	public void configureGlobal(AuthenticationManagerBuilder auth) 
 			throws Exception{
@@ -21,7 +19,7 @@ public class InMemorySecurityConfig {
         InMemoryUserDetailsManagerConfigurer<AuthenticationManagerBuilder> 
         inMemoryAuth = auth.inMemoryAuthentication();
         
-        // Personaliza a autenticação em memória de dois usuários que poderam acessar com essas credenciais
+        // Personaliza a autenticação em memória
         inMemoryAuth
             .withUser("ronaldo").password("{noop}123").roles("USER")
             .and()
